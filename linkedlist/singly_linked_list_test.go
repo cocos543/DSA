@@ -111,3 +111,23 @@ func TestInsertList(t *testing.T) {
 	assert.Equal(t, "2-->3-->nil", list.GetString(), "DeleteNodeAtIndex is incorrect")
 
 }
+
+func TestReverseListNode(t *testing.T) {
+	list := NewSinglyLinkedList(nil)
+	node1 := NewSinglyLinkedNode(1)
+	node2 := NewSinglyLinkedNode(2)
+	node3 := NewSinglyLinkedNode(3)
+	node4 := NewSinglyLinkedNode(4)
+	node5 := NewSinglyLinkedNode(5)
+	list.InsertNode(node1)
+	list.InsertNode(node2)
+	list.InsertNode(node3)
+	list.InsertNode(node4)
+	list.InsertNode(node5)
+	list.String()
+	t.Log("Reversed:")
+	head := ReverseList(list.GetFirstNode())
+	list = NewSinglyLinkedListFromNode(head)
+	list.String()
+	assert.Equal(t, "5-->4-->3-->2-->1-->nil", list.GetString(), "ReverseList is incorrect")
+}

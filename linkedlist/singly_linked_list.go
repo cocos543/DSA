@@ -181,3 +181,21 @@ func (list *SinglyLinkedList) GetString() (listString string) {
 	listString += fmt.Sprintf("nil")
 	return
 }
+
+// ReverseList 反转链表
+/// node 为链表第一个节点
+func ReverseList(node *SinglyLinkedNode) *SinglyLinkedNode {
+	head := NewSinglyLinkedNode(nil)
+	head.next = node
+
+	// per用于保存cur的前一个节点, curNext用于保存cur的下一个节点
+	var per *SinglyLinkedNode
+	cur := head.next
+	for cur != nil {
+		curNext := cur.next
+		cur.next = per
+		per = cur
+		cur = curNext
+	}
+	return per
+}
