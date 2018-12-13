@@ -296,10 +296,10 @@ func IsLoopLinkedList(node *SinglyLinkedNode) (isLoop bool) {
 	return
 }
 
-// MergeTowOrderlyList 合并两个有序链表, 合并之后保持顺序
+// MergeTowOrderedList 合并两个有序链表, 合并之后保持顺序
 // 这里规定节点存放int型数据, 两个链表的顺序是相同的
 // 算法: 采用哨兵简化算法, 将b链上的节点插入到a链中
-func MergeTowOrderlyList(nodeA *SinglyLinkedNode, nodeB *SinglyLinkedNode) *SinglyLinkedNode {
+func MergeTowOrderedList(nodeA *SinglyLinkedNode, nodeB *SinglyLinkedNode) *SinglyLinkedNode {
 
 	if nodeA == nil || nodeB == nil {
 		panic("node can't be nil!")

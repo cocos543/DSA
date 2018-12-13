@@ -218,7 +218,7 @@ func TestIsLoopLinkedList(t *testing.T) {
 
 }
 
-func TestMergeTowOrderlyList(t *testing.T) {
+func TestMergeTowOrderedList(t *testing.T) {
 	listA := NewSinglyLinkedList(nil)
 	listA.InsertNode(NewSinglyLinkedNode(1))
 	listA.InsertNode(NewSinglyLinkedNode(2))
@@ -227,9 +227,9 @@ func TestMergeTowOrderlyList(t *testing.T) {
 	listB.InsertNode(NewSinglyLinkedNode(1))
 
 	list := NewSinglyLinkedList(nil)
-	list.InsertNode(MergeTowOrderlyList(listA.GetFirstNode(), listB.GetFirstNode()))
+	list.InsertNode(MergeTowOrderedList(listA.GetFirstNode(), listB.GetFirstNode()))
 	list.String()
-	assert.Equal(t, "1-->1-->2-->nil", list.GetString(), "MergeTowOrderlyList is incorrect")
+	assert.Equal(t, "1-->1-->2-->nil", list.GetString(), "MergeTowOrderedList is incorrect")
 
 	listA = NewSinglyLinkedList(nil)
 	listA.InsertNode(NewSinglyLinkedNode(1))
@@ -244,9 +244,9 @@ func TestMergeTowOrderlyList(t *testing.T) {
 	listB.InsertNode(NewSinglyLinkedNode(5))
 
 	list = NewSinglyLinkedList(nil)
-	list.InsertNode(MergeTowOrderlyList(listB.GetFirstNode(), listA.GetFirstNode()))
+	list.InsertNode(MergeTowOrderedList(listB.GetFirstNode(), listA.GetFirstNode()))
 	list.String()
-	assert.Equal(t, "1-->1-->2-->3-->3-->4-->4-->5-->nil", list.GetString(), "MergeTowOrderlyList is incorrect")
+	assert.Equal(t, "1-->1-->2-->3-->3-->4-->4-->5-->nil", list.GetString(), "MergeTowOrderedList is incorrect")
 
 	listA = NewSinglyLinkedList(nil)
 	listA.InsertNode(NewSinglyLinkedNode(5))
@@ -256,9 +256,9 @@ func TestMergeTowOrderlyList(t *testing.T) {
 	listB.InsertNode(NewSinglyLinkedNode(1))
 
 	list = NewSinglyLinkedList(nil)
-	list.InsertNode(MergeTowOrderlyList(listA.GetFirstNode(), listB.GetFirstNode()))
+	list.InsertNode(MergeTowOrderedList(listA.GetFirstNode(), listB.GetFirstNode()))
 	list.String()
-	assert.Equal(t, "5-->1-->1-->nil", list.GetString(), "MergeTowOrderlyList is incorrect")
+	assert.Equal(t, "5-->1-->1-->nil", list.GetString(), "MergeTowOrderedList is incorrect")
 
 	listA = NewSinglyLinkedList(nil)
 	listA.InsertNode(NewSinglyLinkedNode(4))
@@ -273,9 +273,9 @@ func TestMergeTowOrderlyList(t *testing.T) {
 	listB.InsertNode(NewSinglyLinkedNode(2))
 
 	list = NewSinglyLinkedList(nil)
-	list.InsertNode(MergeTowOrderlyList(listB.GetFirstNode(), listA.GetFirstNode()))
+	list.InsertNode(MergeTowOrderedList(listB.GetFirstNode(), listA.GetFirstNode()))
 	list.String()
-	assert.Equal(t, "5-->4-->4-->3-->3-->2-->2-->1-->nil", list.GetString(), "MergeTowOrderlyList is incorrect")
+	assert.Equal(t, "5-->4-->4-->3-->3-->2-->2-->1-->nil", list.GetString(), "MergeTowOrderedList is incorrect")
 
 	listA = NewSinglyLinkedList(nil)
 	listA.InsertNode(NewSinglyLinkedNode(-10))
@@ -299,9 +299,9 @@ func TestMergeTowOrderlyList(t *testing.T) {
 	listB.InsertNode(NewSinglyLinkedNode(7))
 
 	list = NewSinglyLinkedList(nil)
-	list.InsertNode(MergeTowOrderlyList(listB.GetFirstNode(), listA.GetFirstNode()))
+	list.InsertNode(MergeTowOrderedList(listB.GetFirstNode(), listA.GetFirstNode()))
 	list.String()
-	assert.Equal(t, "-10-->-10-->-10-->-8-->-6-->-6-->-1-->-1-->-1-->0-->2-->2-->5-->7-->7-->8-->8-->nil", list.GetString(), "MergeTowOrderlyList is incorrect")
+	assert.Equal(t, "-10-->-10-->-10-->-8-->-6-->-6-->-1-->-1-->-1-->0-->2-->2-->5-->7-->7-->8-->8-->nil", list.GetString(), "MergeTowOrderedList is incorrect")
 
 }
 
