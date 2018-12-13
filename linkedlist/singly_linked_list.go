@@ -161,25 +161,15 @@ func (list *SinglyLinkedList) DeleteNodeAtIndex(index int64) {
 	return
 }
 
-// 打印出节点
-func (list *SinglyLinkedList) String() {
-	p := list.head
-	for p.next != nil {
-		fmt.Printf("%v-->", p.next.value)
-		p = p.next
-	}
-	fmt.Printf("nil\n")
-}
-
-// GetString 获取整条链, 返回一个字符串
-func (list *SinglyLinkedList) GetString() (listString string) {
+func (list *SinglyLinkedList) String() string {
+	var listString string
 	p := list.head
 	for p.next != nil {
 		listString += fmt.Sprintf("%v-->", p.next.value)
 		p = p.next
 	}
 	listString += fmt.Sprintf("nil")
-	return
+	return listString
 }
 
 // GetMedianNode 获取链表的中间节点
