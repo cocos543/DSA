@@ -6,8 +6,8 @@ import (
 
 // SinglyLinkedNode 单向链表节点
 type SinglyLinkedNode struct {
-	next  *SinglyLinkedNode
 	value interface{}
+	next  *SinglyLinkedNode
 }
 
 // NewSinglyLinkedNode 构造函数
@@ -182,9 +182,34 @@ func (list *SinglyLinkedList) GetString() (listString string) {
 	return
 }
 
+// GetMedianNode 获取链表的中间节点
+// 算法: 采用快慢指针定位法
+func GetMedianNode(node *SinglyLinkedNode) *SinglyLinkedNode {
+	if node == nil {
+		panic("node can't be nil!")
+	}
+
+	head := NewSinglyLinkedNode(nil)
+	head.next = node
+
+	// p1 每次前进1步, p2每次前进2步
+	p1 := head
+	p2 := head
+
+	for p2 != nil && p2.next != nil {
+		p1 = p1.next
+		p2 = p2.next.next
+	}
+	return p1
+}
+
 // ReverseList 反转链表
 /// node 为链表第一个节点
 func ReverseList(node *SinglyLinkedNode) *SinglyLinkedNode {
+	if node == nil {
+		return nil
+	}
+
 	head := NewSinglyLinkedNode(nil)
 	head.next = node
 
@@ -198,4 +223,185 @@ func ReverseList(node *SinglyLinkedNode) *SinglyLinkedNode {
 		cur = curNext
 	}
 	return per
+}
+
+// IsPalindrome 判断回文串.
+// node 为链表第一个节点.
+// 算法: 不引入数组结构, 直接在链上进行判断.
+func IsPalindrome(node *SinglyLinkedNode) (isPalindrome bool) {
+	if node == nil {
+		panic("node can't be nil!")
+	}
+
+	head := NewSinglyLinkedNode(nil)
+	head.next = node
+
+	// pm指向中位节点, pm.next 为后部分数据的第一个节点
+	var pm *SinglyLinkedNode
+	pm = GetMedianNode(head.next)
+	fmt.Println("Median node is ", pm.value)
+	// 反转后半部分
+	pm.next = ReverseList(pm.next)
+
+	// 开始检查回文
+	pa := head
+	pb := pm
+
+	isPalindrome = true
+	for pb.next != nil {
+		if pa.next.value != pb.next.value {
+			isPalindrome = false
+		}
+		pa = pa.next
+		pb = pb.next
+	}
+
+	// 还原现场
+	pm.next = ReverseList(pm.next)
+
+	return
+}
+
+// IsLoopLinkedList 判断链表中是否含有环
+// 算法: 采用快慢指针识别.
+// 证明方法:
+//     假设B的速度是m, A的速度是n, m > n, m和n都是整数. 当B, A速度都下降n时, 则A速度0, B速度m-n, 即每次循环, B可以前进m-n, 如果链表有环,环长度为N,则
+//     B需要 N / (m - n) 次循环可以跑回原点与A相遇. 令 m =2, n = 1, 则循环 N/1 = N次时, 如果P(B) = P(A), 则是循环单向链表. 否则, 则不是循环单向链表
+//     同理, 当A, B先后进入环中, 即起点不同, 假设A速度移动速度降为0, B的速度为m-n, 可知只要存在环, 则B一定会再次遇上A.
+func IsLoopLinkedList(node *SinglyLinkedNode) (isLoop bool) {
+	if node == nil {
+		panic("node can't be nil!")
+	}
+	head := NewSinglyLinkedNode(nil)
+	head.next = node
+
+	pa := head
+	pb := head
+
+	// do while
+	for {
+		pa = pa.next
+		pb = pb.next.next
+		if pb == nil || pb.next == nil || pb == pa {
+			break
+		}
+	}
+
+	if pb == pa {
+		isLoop = true
+	} else {
+		isLoop = false
+	}
+
+	return
+}
+
+// MergeTowOrderlyList 合并两个有序链表, 合并之后保持顺序
+// 这里规定节点存放int型数据, 两个链表的顺序是相同的
+// 算法: 采用哨兵简化算法, 将b链上的节点插入到a链中
+func MergeTowOrderlyList(nodeA *SinglyLinkedNode, nodeB *SinglyLinkedNode) *SinglyLinkedNode {
+
+	if nodeA == nil || nodeB == nil {
+		panic("node can't be nil!")
+	}
+
+	pa := nodeA
+	pb := nodeB
+
+	// 先确认是否为升序
+	isAsc := false
+	OrderConfirm := false
+	for pa.next != nil {
+		if pa.value.(int) < pa.next.value.(int) {
+			isAsc = true
+			OrderConfirm = true
+			break
+		} else if pa.value.(int) > pa.next.value.(int) {
+			isAsc = false
+			OrderConfirm = true
+		}
+		pa = pa.next
+	}
+
+	// 如果无法从第一条链确认顺序, 那说明第一条了的全部节点的值都是相同的, 只能从第二条链确认了.
+	if !OrderConfirm {
+		for pb.next != nil {
+			if pb.value.(int) < pb.next.value.(int) {
+				isAsc = true
+				OrderConfirm = true
+				break
+			} else if pb.value.(int) > pb.next.value.(int) {
+				isAsc = false
+				OrderConfirm = true
+			}
+			pb = pb.next
+		}
+	}
+
+	// 如果两条链都无法确认顺序, 那说明两条链中任意一条自身的所有节点值都相同(可能只有1个节点), 这个时候只需要简单把一条接到另一条后面即可
+	if !OrderConfirm {
+		if pa.value.(int) < pb.value.(int) {
+			pa.next = nodeB
+			return nodeA
+		}
+		pb.next = nodeA
+		return nodeB
+	}
+
+	// 哨兵节点
+	headA := NewSinglyLinkedNode(nil)
+	headA.next = nodeA
+
+	headB := NewSinglyLinkedNode(nil)
+	headB.next = nodeB
+
+	pa = headA
+	pb = headB
+
+	for pa.next != nil && pb.next != nil {
+		if (isAsc && pa.next.value.(int) < pb.next.value.(int)) || (!isAsc && pa.next.value.(int) > pb.next.value.(int)) {
+			pa = pa.next
+			continue
+		}
+		// 将pb.next插入到pa.next左边
+		pbNextNext := pb.next.next
+		pb.next.next = pa.next
+		pa.next = pb.next
+		pb.next = pbNextNext
+
+	}
+
+	// 把剩余的部分接到长链上
+	// 这里要区分某一条链只有1个节点的情况
+	if pb.next != nil {
+		// 当a链到达末尾时, b链还有剩余节点, 则b链剩余部分直接插入到a后
+		pa.next = pb.next
+	}
+
+	return headA.next
+}
+
+// RemoveNthNodeFromEndofList 移除倒数第N个节点
+// 算法: 带哨兵节点, 这里假设n一直都是合法的.
+func RemoveNthNodeFromEndofList(node *SinglyLinkedNode, n int) *SinglyLinkedNode {
+	head := NewSinglyLinkedNode(nil)
+	head.next = node
+
+	// pn 最终将指向倒数第n个节点的前一个节点
+	pn := head
+	plast := head
+	for n != 0 {
+		plast = plast.next
+		n--
+	}
+
+	for plast.next != nil {
+		pn = pn.next
+		plast = plast.next
+	}
+
+	// 这里pn.next就是倒数第n个节点, 直接移除就可以
+	fmt.Println("Delete ", pn.next.value)
+	pn.next = pn.next.next
+	return head.next
 }
