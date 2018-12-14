@@ -25,3 +25,5 @@
 * 求链表的中间节点
 
     时间复杂度O(n), 空间复杂度O(1) ✓
+
+## [双向链表](https://github.com/cocos543/DSA/blob/master/linkedlist/double_linked_lists.go) ✓

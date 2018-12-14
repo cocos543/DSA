@@ -32,9 +32,8 @@ type SinglyLinkedList struct {
 }
 
 // NewSinglyLinkedList 单向链表构造函数
-func NewSinglyLinkedList(node *SinglyLinkedNode) *SinglyLinkedList {
+func NewSinglyLinkedList() *SinglyLinkedList {
 	head := NewSinglyLinkedNode(nil)
-	head.next = node
 	return &SinglyLinkedList{head: head, length: 0}
 }
 
@@ -44,7 +43,7 @@ func NewSinglyLinkedListFromNode(node *SinglyLinkedNode) *SinglyLinkedList {
 		panic("node can't be nil!")
 	}
 
-	list := NewSinglyLinkedList(nil)
+	list := NewSinglyLinkedList()
 	list.InsertNode(node)
 
 	return list

@@ -8,7 +8,7 @@ import (
 )
 
 func TestInsertList(t *testing.T) {
-	list := NewSinglyLinkedList(nil)
+	list := NewSinglyLinkedList()
 	for i := 0; i < 10; i++ {
 		node := NewSinglyLinkedNode(i + 1)
 		list.InsertNode(node)
@@ -16,14 +16,14 @@ func TestInsertList(t *testing.T) {
 	fmt.Println(list)
 	assert.Equal(t, 1, list.head.next.GetValue(), "InsertNode is incorrect")
 
-	list = NewSinglyLinkedList(nil)
+	list = NewSinglyLinkedList()
 	for i := 0; i < 10; i++ {
 		node := NewSinglyLinkedNode(i + 1)
 		list.InsertNodeHead(node)
 	}
 	fmt.Println(list)
 
-	list = NewSinglyLinkedList(nil)
+	list = NewSinglyLinkedList()
 	node1 := NewSinglyLinkedNode(1)
 	node2 := NewSinglyLinkedNode(2)
 	node3 := NewSinglyLinkedNode(3)
@@ -43,7 +43,7 @@ func TestInsertList(t *testing.T) {
 	assert.Equal(t, "1-->2-->3-->4-->6-->5-->nil", list.String(), "InsertNodeAfterAt is incorrect")
 	assert.Equal(t, false, list.InsertNodeAfterAt(node7, node8), "InsertNodeAfterAt is incorrect")
 
-	list = NewSinglyLinkedList(nil)
+	list = NewSinglyLinkedList()
 	node1 = NewSinglyLinkedNode(1)
 	node2 = NewSinglyLinkedNode(2)
 	node3 = NewSinglyLinkedNode(3)
@@ -64,7 +64,7 @@ func TestInsertList(t *testing.T) {
 	assert.Equal(t, false, list.InsertNodeAfterAt(node7, node8), "InsertNodeAfterAt is incorrect")
 	assert.Equal(t, node6, list.GetNodeAtIndex(3), "GetNodeAtIndex is incorrect")
 
-	list = NewSinglyLinkedList(nil)
+	list = NewSinglyLinkedList()
 	node1 = NewSinglyLinkedNode(1)
 	node2 = NewSinglyLinkedNode(2)
 	node3 = NewSinglyLinkedNode(3)
@@ -89,7 +89,7 @@ func TestInsertList(t *testing.T) {
 	ret = list.DeleteNode(node5)
 	assert.Equal(t, false, ret, "DeleteNode is incorrect")
 
-	list = NewSinglyLinkedList(nil)
+	list = NewSinglyLinkedList()
 	node1 = NewSinglyLinkedNode(1)
 	node2 = NewSinglyLinkedNode(2)
 	node3 = NewSinglyLinkedNode(3)
@@ -114,7 +114,7 @@ func TestInsertList(t *testing.T) {
 }
 
 func TestReverseListNode(t *testing.T) {
-	list := NewSinglyLinkedList(nil)
+	list := NewSinglyLinkedList()
 	node1 := NewSinglyLinkedNode(1)
 	node2 := NewSinglyLinkedNode(2)
 	node3 := NewSinglyLinkedNode(3)
@@ -134,18 +134,18 @@ func TestReverseListNode(t *testing.T) {
 }
 
 func TestPalindrome(t *testing.T) {
-	list := NewSinglyLinkedList(nil)
+	list := NewSinglyLinkedList()
 	node1 := NewSinglyLinkedNode("a")
 	list.InsertNode(node1)
 	assert.Equal(t, true, IsPalindrome(list.GetFirstNode()), "IsPalindrome is incorrect")
 
-	list = NewSinglyLinkedList(nil)
+	list = NewSinglyLinkedList()
 	node1 = NewSinglyLinkedNode("a")
 	node2 := NewSinglyLinkedNode("a")
 	list.InsertNode(node1)
 	assert.Equal(t, true, IsPalindrome(list.GetFirstNode()), "IsPalindrome is incorrect")
 
-	list = NewSinglyLinkedList(nil)
+	list = NewSinglyLinkedList()
 	node1 = NewSinglyLinkedNode("a")
 	node2 = NewSinglyLinkedNode("b")
 	node3 := NewSinglyLinkedNode("c")
@@ -165,7 +165,7 @@ func TestPalindrome(t *testing.T) {
 	assert.Equal(t, true, IsPalindrome(list.GetFirstNode()), "IsPalindrome is incorrect")
 	assert.Equal(t, "a-->b-->c-->d-->c-->b-->a-->nil", list.String(), "IsPalindrome is incorrect")
 
-	list = NewSinglyLinkedList(nil)
+	list = NewSinglyLinkedList()
 	node1 = NewSinglyLinkedNode("a")
 	node2 = NewSinglyLinkedNode("b")
 	node3 = NewSinglyLinkedNode("c")
@@ -185,7 +185,7 @@ func TestPalindrome(t *testing.T) {
 }
 
 func TestIsLoopLinkedList(t *testing.T) {
-	list := NewSinglyLinkedList(nil)
+	list := NewSinglyLinkedList()
 	node1 := NewSinglyLinkedNode(1)
 	list.InsertNode(node1)
 
@@ -193,7 +193,7 @@ func TestIsLoopLinkedList(t *testing.T) {
 	node1.next = node1
 	assert.Equal(t, true, IsLoopLinkedList(list.GetFirstNode()), "IsLoopLinkedList is incorrect")
 
-	list = NewSinglyLinkedList(nil)
+	list = NewSinglyLinkedList()
 	node1 = NewSinglyLinkedNode(1)
 	node2 := NewSinglyLinkedNode(2)
 	list.InsertNode(node1)
@@ -202,7 +202,7 @@ func TestIsLoopLinkedList(t *testing.T) {
 
 	assert.Equal(t, true, IsLoopLinkedList(list.GetFirstNode()), "IsLoopLinkedList is incorrect")
 
-	list = NewSinglyLinkedList(nil)
+	list = NewSinglyLinkedList()
 	node1 = NewSinglyLinkedNode(1)
 	node2 = NewSinglyLinkedNode(2)
 	node3 := NewSinglyLinkedNode(3)
@@ -220,65 +220,65 @@ func TestIsLoopLinkedList(t *testing.T) {
 }
 
 func TestMergeTowOrderedList(t *testing.T) {
-	listA := NewSinglyLinkedList(nil)
+	listA := NewSinglyLinkedList()
 	listA.InsertNode(NewSinglyLinkedNode(1))
 	listA.InsertNode(NewSinglyLinkedNode(2))
 
-	listB := NewSinglyLinkedList(nil)
+	listB := NewSinglyLinkedList()
 	listB.InsertNode(NewSinglyLinkedNode(1))
 
-	list := NewSinglyLinkedList(nil)
+	list := NewSinglyLinkedList()
 	list.InsertNode(MergeTowOrderedList(listA.GetFirstNode(), listB.GetFirstNode()))
 	fmt.Println(list)
 	assert.Equal(t, "1-->1-->2-->nil", list.String(), "MergeTowOrderedList is incorrect")
 
-	listA = NewSinglyLinkedList(nil)
+	listA = NewSinglyLinkedList()
 	listA.InsertNode(NewSinglyLinkedNode(1))
 	listA.InsertNode(NewSinglyLinkedNode(2))
 	listA.InsertNode(NewSinglyLinkedNode(3))
 	listA.InsertNode(NewSinglyLinkedNode(4))
 
-	listB = NewSinglyLinkedList(nil)
+	listB = NewSinglyLinkedList()
 	listB.InsertNode(NewSinglyLinkedNode(1))
 	listB.InsertNode(NewSinglyLinkedNode(3))
 	listB.InsertNode(NewSinglyLinkedNode(4))
 	listB.InsertNode(NewSinglyLinkedNode(5))
 
-	list = NewSinglyLinkedList(nil)
+	list = NewSinglyLinkedList()
 	list.InsertNode(MergeTowOrderedList(listB.GetFirstNode(), listA.GetFirstNode()))
 	fmt.Println(list)
 	assert.Equal(t, "1-->1-->2-->3-->3-->4-->4-->5-->nil", list.String(), "MergeTowOrderedList is incorrect")
 
-	listA = NewSinglyLinkedList(nil)
+	listA = NewSinglyLinkedList()
 	listA.InsertNode(NewSinglyLinkedNode(5))
 	listA.InsertNode(NewSinglyLinkedNode(1))
 
-	listB = NewSinglyLinkedList(nil)
+	listB = NewSinglyLinkedList()
 	listB.InsertNode(NewSinglyLinkedNode(1))
 
-	list = NewSinglyLinkedList(nil)
+	list = NewSinglyLinkedList()
 	list.InsertNode(MergeTowOrderedList(listA.GetFirstNode(), listB.GetFirstNode()))
 	fmt.Println(list)
 	assert.Equal(t, "5-->1-->1-->nil", list.String(), "MergeTowOrderedList is incorrect")
 
-	listA = NewSinglyLinkedList(nil)
+	listA = NewSinglyLinkedList()
 	listA.InsertNode(NewSinglyLinkedNode(4))
 	listA.InsertNode(NewSinglyLinkedNode(3))
 	listA.InsertNode(NewSinglyLinkedNode(2))
 	listA.InsertNode(NewSinglyLinkedNode(1))
 
-	listB = NewSinglyLinkedList(nil)
+	listB = NewSinglyLinkedList()
 	listB.InsertNode(NewSinglyLinkedNode(5))
 	listB.InsertNode(NewSinglyLinkedNode(4))
 	listB.InsertNode(NewSinglyLinkedNode(3))
 	listB.InsertNode(NewSinglyLinkedNode(2))
 
-	list = NewSinglyLinkedList(nil)
+	list = NewSinglyLinkedList()
 	list.InsertNode(MergeTowOrderedList(listB.GetFirstNode(), listA.GetFirstNode()))
 	fmt.Println(list)
 	assert.Equal(t, "5-->4-->4-->3-->3-->2-->2-->1-->nil", list.String(), "MergeTowOrderedList is incorrect")
 
-	listA = NewSinglyLinkedList(nil)
+	listA = NewSinglyLinkedList()
 	listA.InsertNode(NewSinglyLinkedNode(-10))
 	listA.InsertNode(NewSinglyLinkedNode(-6))
 	listA.InsertNode(NewSinglyLinkedNode(-1))
@@ -289,7 +289,7 @@ func TestMergeTowOrderedList(t *testing.T) {
 	listA.InsertNode(NewSinglyLinkedNode(8))
 	listA.InsertNode(NewSinglyLinkedNode(8))
 
-	listB = NewSinglyLinkedList(nil)
+	listB = NewSinglyLinkedList()
 	listB.InsertNode(NewSinglyLinkedNode(-10))
 	listB.InsertNode(NewSinglyLinkedNode(-10))
 	listB.InsertNode(NewSinglyLinkedNode(-8))
@@ -299,7 +299,7 @@ func TestMergeTowOrderedList(t *testing.T) {
 	listB.InsertNode(NewSinglyLinkedNode(5))
 	listB.InsertNode(NewSinglyLinkedNode(7))
 
-	list = NewSinglyLinkedList(nil)
+	list = NewSinglyLinkedList()
 	list.InsertNode(MergeTowOrderedList(listB.GetFirstNode(), listA.GetFirstNode()))
 	fmt.Println(list)
 	assert.Equal(t, "-10-->-10-->-10-->-8-->-6-->-6-->-1-->-1-->-1-->0-->2-->2-->5-->7-->7-->8-->8-->nil", list.String(), "MergeTowOrderedList is incorrect")
@@ -307,48 +307,48 @@ func TestMergeTowOrderedList(t *testing.T) {
 }
 
 func TestRemoveNthNodeFromEndofList(t *testing.T) {
-	listA := NewSinglyLinkedList(nil)
+	listA := NewSinglyLinkedList()
 	listA.InsertNode(NewSinglyLinkedNode(1))
 
-	list := NewSinglyLinkedList(nil)
+	list := NewSinglyLinkedList()
 	list.InsertNode(RemoveNthNodeFromEndofList(listA.GetFirstNode(), 1))
 	fmt.Println(list)
 	assert.Equal(t, "nil", list.String(), "RemoveNthNodeFromEndofList is incorrect")
 
-	listA = NewSinglyLinkedList(nil)
+	listA = NewSinglyLinkedList()
 	listA.InsertNode(NewSinglyLinkedNode(1))
 	listA.InsertNode(NewSinglyLinkedNode(2))
 	listA.InsertNode(NewSinglyLinkedNode(3))
 	listA.InsertNode(NewSinglyLinkedNode(4))
 	listA.InsertNode(NewSinglyLinkedNode(5))
 
-	list = NewSinglyLinkedList(nil)
+	list = NewSinglyLinkedList()
 	list.InsertNode(RemoveNthNodeFromEndofList(listA.GetFirstNode(), 1))
 
 	fmt.Println(list)
 	assert.Equal(t, "1-->2-->3-->4-->nil", list.String(), "RemoveNthNodeFromEndofList is incorrect")
 
-	listA = NewSinglyLinkedList(nil)
+	listA = NewSinglyLinkedList()
 	listA.InsertNode(NewSinglyLinkedNode(1))
 	listA.InsertNode(NewSinglyLinkedNode(2))
 	listA.InsertNode(NewSinglyLinkedNode(3))
 	listA.InsertNode(NewSinglyLinkedNode(4))
 	listA.InsertNode(NewSinglyLinkedNode(5))
 
-	list = NewSinglyLinkedList(nil)
+	list = NewSinglyLinkedList()
 	list.InsertNode(RemoveNthNodeFromEndofList(listA.GetFirstNode(), 4))
 
 	fmt.Println(list)
 	assert.Equal(t, "1-->3-->4-->5-->nil", list.String(), "RemoveNthNodeFromEndofList is incorrect")
 
-	listA = NewSinglyLinkedList(nil)
+	listA = NewSinglyLinkedList()
 	listA.InsertNode(NewSinglyLinkedNode(1))
 	listA.InsertNode(NewSinglyLinkedNode(2))
 	listA.InsertNode(NewSinglyLinkedNode(3))
 	listA.InsertNode(NewSinglyLinkedNode(4))
 	listA.InsertNode(NewSinglyLinkedNode(5))
 
-	list = NewSinglyLinkedList(nil)
+	list = NewSinglyLinkedList()
 	list.InsertNode(RemoveNthNodeFromEndofList(listA.GetFirstNode(), 5))
 
 	fmt.Println(list)
