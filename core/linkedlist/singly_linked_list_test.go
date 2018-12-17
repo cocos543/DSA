@@ -14,7 +14,7 @@ func TestInsertList(t *testing.T) {
 		list.InsertNode(node)
 	}
 	fmt.Println(list)
-	assert.Equal(t, 1, list.head.next.GetValue(), "InsertNode is incorrect")
+	assert.Equal(t, 1, list.head.next.Value(), "InsertNode is incorrect")
 
 	list = NewSinglyLinkedList()
 	for i := 0; i < 10; i++ {

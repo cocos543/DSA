@@ -14,25 +14,25 @@ func NewDoubleLinkedNode(v interface{}) *DoubleLinkedNode {
 	return &DoubleLinkedNode{value: v}
 }
 
-// GetValue 获取节点的内容
-func (node *DoubleLinkedNode) GetValue() interface{} {
+// Value 获取节点的内容
+func (node *DoubleLinkedNode) Value() interface{} {
 	return node.value
 }
 
-// GetNext 获取节点的下一个节点
-func (node *DoubleLinkedNode) GetNext() *DoubleLinkedNode {
+// Next 获取节点的下一个节点
+func (node *DoubleLinkedNode) Next() *DoubleLinkedNode {
 	return node.next
 }
 
-// GetPerv 获取节点的下一个节点
-func (node *DoubleLinkedNode) GetPerv() *DoubleLinkedNode {
+// Perv 获取节点的下一个节点
+func (node *DoubleLinkedNode) Perv() *DoubleLinkedNode {
 	return node.perv
 }
 
 // DoubleLinkedLists 双向链表, 带哨兵节点(空头节点)
 type DoubleLinkedLists struct {
 	head   *DoubleLinkedNode
-	length int64
+	length int
 }
 
 // NewDoubleLinkedLists 双向链表构造函数
@@ -51,6 +51,11 @@ func NewDoubleLinkedListsFromNode(node *DoubleLinkedNode) *DoubleLinkedLists {
 	list.InsertNode(node)
 
 	return list
+}
+
+//Length 获取链表长度
+func (list *DoubleLinkedLists) Length() int {
+	return list.length
 }
 
 // GetFirstNode 返回第一个数据节点
@@ -129,7 +134,7 @@ func (list *DoubleLinkedLists) InsertNodeAfterValueAt(dest interface{}, node *Do
 }
 
 // GetNodeAtIndex 获取指定位置的节点
-func (list *DoubleLinkedLists) GetNodeAtIndex(index int64) *DoubleLinkedNode {
+func (list *DoubleLinkedLists) GetNodeAtIndex(index int) *DoubleLinkedNode {
 	if index > list.length-1 || index < 0 {
 		panic("out of range")
 	}
@@ -166,7 +171,7 @@ func (list *DoubleLinkedLists) DeleteNode(dest *DoubleLinkedNode) (deleted bool)
 }
 
 // DeleteNodeAtIndex 删除指定位置的节点
-func (list *DoubleLinkedLists) DeleteNodeAtIndex(index int64) {
+func (list *DoubleLinkedLists) DeleteNodeAtIndex(index int) {
 	if index > list.length-1 || index < 0 {
 		panic("out of range")
 	}

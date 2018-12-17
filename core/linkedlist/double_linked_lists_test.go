@@ -15,7 +15,7 @@ func TestInsertDoubleLinkedLists(t *testing.T) {
 	}
 	fmt.Println(list)
 	assert.Equal(t, "1-->2-->3-->4-->5-->6-->7-->8-->9-->10-->nil\nhead<--1<--2<--3<--4<--5<--6<--7<--8<--9<--10\n", list.String(), "InsertNode is incorrect")
-	assert.EqualValues(t, int64(10), list.length, "InsertNode is incorrect")
+	assert.EqualValues(t, 10, list.length, "InsertNode is incorrect")
 
 	list = NewDoubleLinkedLists()
 	for i := 10; i > 0; i-- {
@@ -24,7 +24,7 @@ func TestInsertDoubleLinkedLists(t *testing.T) {
 	}
 	fmt.Println(list)
 	assert.Equal(t, "1-->2-->3-->4-->5-->6-->7-->8-->9-->10-->nil\nhead<--1<--2<--3<--4<--5<--6<--7<--8<--9<--10\n", list.String(), "InsertNodeHead is incorrect")
-	assert.EqualValues(t, int64(10), list.length, "InsertNodeHead is incorrect")
+	assert.EqualValues(t, 10, list.length, "InsertNodeHead is incorrect")
 
 	list = NewDoubleLinkedLists()
 	node1 := NewDoubleLinkedNode(1)
@@ -47,7 +47,7 @@ func TestInsertDoubleLinkedLists(t *testing.T) {
 	fmt.Println(list)
 	assert.Equal(t, "1-->7-->2-->3-->4-->6-->5-->nil\nhead<--1<--7<--2<--3<--4<--6<--5\n", list.String(), "InsertNodeAfterAt is incorrect")
 	assert.Equal(t, false, list.InsertNodeAfterAt(node8, node1), "InsertNodeAfterAt is incorrect")
-	assert.EqualValues(t, int64(7), list.length, "InsertNodeAfterAt is incorrect")
+	assert.EqualValues(t, 7, list.length, "InsertNodeAfterAt is incorrect")
 
 	list = NewDoubleLinkedLists()
 	node1 = NewDoubleLinkedNode(1)

@@ -15,20 +15,20 @@ func NewSinglyLinkedNode(v interface{}) *SinglyLinkedNode {
 	return &SinglyLinkedNode{value: v, next: nil}
 }
 
-// GetValue 获取节点的内容
-func (node *SinglyLinkedNode) GetValue() interface{} {
+// Value 获取节点的内容
+func (node *SinglyLinkedNode) Value() interface{} {
 	return node.value
 }
 
-// GetNext 获取节点的下一个节点
-func (node *SinglyLinkedNode) GetNext() *SinglyLinkedNode {
+// Next 获取节点的下一个节点
+func (node *SinglyLinkedNode) Next() *SinglyLinkedNode {
 	return node.next
 }
 
 // SinglyLinkedList 单向链表, 带哨兵节点(空头节点)
 type SinglyLinkedList struct {
 	head   *SinglyLinkedNode
-	length int64
+	length int
 }
 
 // NewSinglyLinkedList 单向链表构造函数
@@ -108,7 +108,7 @@ func (list *SinglyLinkedList) InsertNodeAfterValueAt(dest interface{}, node *Sin
 }
 
 // GetNodeAtIndex 获取指定位置的节点
-func (list *SinglyLinkedList) GetNodeAtIndex(index int64) *SinglyLinkedNode {
+func (list *SinglyLinkedList) GetNodeAtIndex(index int) *SinglyLinkedNode {
 	if index > list.length-1 || index < 0 {
 		panic("out of range")
 	}
@@ -142,7 +142,7 @@ func (list *SinglyLinkedList) DeleteNode(dest *SinglyLinkedNode) (deleted bool) 
 }
 
 // DeleteNodeAtIndex 删除指定位置的节点
-func (list *SinglyLinkedList) DeleteNodeAtIndex(index int64) {
+func (list *SinglyLinkedList) DeleteNodeAtIndex(index int) {
 	if index > list.length-1 || index < 0 {
 		panic("out of range")
 	}

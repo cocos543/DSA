@@ -27,3 +27,10 @@
     时间复杂度O(n), 空间复杂度O(1) ✓
 
 ## [双向链表](https://github.com/cocos543/DSA/blob/master/linkedlist/double_linked_lists.go) ✓
+
+## [栈](https://github.com/cocos543/DSA/blob/master/stack) ✓
+
+### 栈存储结构
+* [顺序栈](https://github.com/cocos543/DSA/blob/master/stack/stack_sequential_storage) ✓
+
+* [链式栈](https://github.com/cocos543/DSA/blob/master/stack/stack_linked_storage) ✓
