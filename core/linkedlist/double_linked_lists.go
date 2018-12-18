@@ -53,7 +53,7 @@ func NewDoubleLinkedListsFromNode(node *DoubleLinkedNode) *DoubleLinkedLists {
 	return list
 }
 
-//Length 获取链表长度
+// Length 获取链表长度
 func (list *DoubleLinkedLists) Length() int {
 	return list.length
 }

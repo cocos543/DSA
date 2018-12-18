@@ -5,14 +5,14 @@ import (
 	"fmt"
 )
 
-//LikedStack 链式栈 使用双向链表实现
+// LikedStack 链式栈 使用双向链表实现
 type LikedStack struct {
 	items *linkedlist.DoubleLinkedLists //元素
 	cap   int                           //栈最大容量
 	top   *linkedlist.DoubleLinkedNode  //指向栈顶节点
 }
 
-//NewLikedStack 构造函数
+// NewLikedStack 构造函数
 func NewLikedStack(cap int) *LikedStack {
 	return &LikedStack{items: linkedlist.NewDoubleLinkedLists(), cap: cap}
 }

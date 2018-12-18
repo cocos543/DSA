@@ -34,3 +34,7 @@
 * [顺序栈](https://github.com/cocos543/DSA/blob/master/core/stack/stack_sequential_storage.go) ✓
 
 * [链式栈](https://github.com/cocos543/DSA/blob/master/core/stack/stack_linked_storage.go) ✓
+
+## [队列](https://github.com/cocos543/DSA/blob/master/core/queue) ✓
+
+* [顺序队列](https://github.com/cocos543/DSA/blob/master/core/queue/queue.go) ✓
