@@ -56,7 +56,7 @@ func StraightInsertionSort(arr []interface{}, compare func(a, b interface{}) boo
 		//[0,i-1]为已排序区间
 		j := i - 1
 		for ; j >= 0; j-- {
-			if !compare(arr[j].(int), arr[j+1].(int)) {
+			if !compare(arr[j], arr[j+1]) {
 				//arr[j]就是arr[i]需要插入的位置
 				//需要腾出位置出来, 让arr[i]插入
 				temp := arr[j+1]
