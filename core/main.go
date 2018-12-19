@@ -1,13 +1,14 @@
 package main
 
 import (
-	. "DSA/core/queue"
+	. "DSA/core/sort"
 	"fmt"
 )
 
 func main() {
 	fmt.Println("Hello, Data Structure & Algorithm.")
 
-	queue := NewQueue(1)
-	fmt.Println(queue.EnQueue(1))
+	arr := []int{1, 2, 3}
+	Swap(arr, 1, 2)
+	fmt.Println(arr)
 }
