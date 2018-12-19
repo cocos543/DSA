@@ -3,7 +3,7 @@
 
 # 实现必修的数据结构与算法
 
-## [单向链表](https://github.com/cocos543/DSA/blob/master/core/linkedlist/singly_linked_list.go) ✓
+## [单向链表](https://github.com/cocos543/DSA/blob/master/core/linkedlist/singly_linked_list.go)
 
 ### 链表常见操作
 * 反转单向链表 ✓
@@ -26,20 +26,20 @@
 
     时间复杂度O(n), 空间复杂度O(1)
 
-## [双向链表](https://github.com/cocos543/DSA/blob/master/core/linkedlist/double_linked_lists.go) ✓
+## [双向链表](https://github.com/cocos543/DSA/blob/master/core/linkedlist/double_linked_lists.go)
 
-## [栈](https://github.com/cocos543/DSA/blob/master/core/stack) ✓
+## [栈](https://github.com/cocos543/DSA/blob/master/core/stack)
 
 ### 栈存储结构
 * [顺序栈](https://github.com/cocos543/DSA/blob/master/core/stack/stack_sequential_storage.go) ✓
 
 * [链式栈](https://github.com/cocos543/DSA/blob/master/core/stack/stack_linked_storage.go) ✓
 
-## [队列](https://github.com/cocos543/DSA/blob/master/core/queue) ✓
+## [队列](https://github.com/cocos543/DSA/blob/master/core/queue)
 
 * [顺序队列](https://github.com/cocos543/DSA/blob/master/core/queue/queue.go) ✓
 
-## [排序](https://github.com/cocos543/DSA/blob/master/core/sort) ✓
+## [排序](https://github.com/cocos543/DSA/blob/master/core/sort)
 
 ### [稳定的排序算法]
 
