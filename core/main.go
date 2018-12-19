@@ -8,7 +8,13 @@ import (
 func main() {
 	fmt.Println("Hello, Data Structure & Algorithm.")
 
-	arr := []int{1, 2, 3}
-	Swap(arr, 1, 2)
-	fmt.Println(arr)
+	arr2 := []string{"a", "c", "b", "f", "e"}
+	s := make([]interface{}, len(arr2))
+	for i, v := range arr2 {
+		s[i] = v
+	}
+
+	BubbleSort(s, func(a, b interface{}) bool {
+		return a.(string) <= b.(string)
+	})
 }
