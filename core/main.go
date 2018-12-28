@@ -8,13 +8,12 @@ import (
 func main() {
 	fmt.Println("Hello, Data Structure & Algorithm.")
 
-	arr2 := []string{"a", "c", "b", "f", "e"}
-	s := make([]interface{}, len(arr2))
-	for i, v := range arr2 {
+	arr1 := []int{11, 8, 3, 9, 7, 1, 2, 5}
+	s := make([]interface{}, len(arr1))
+	for i, v := range arr1 {
 		s[i] = v
 	}
-
-	BubbleSort(s, func(a, b interface{}) bool {
-		return a.(string) <= b.(string)
+	MergingSort(s, func(a, b interface{}) bool {
+		return a.(int) <= b.(int)
 	})
 }

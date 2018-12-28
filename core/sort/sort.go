@@ -4,6 +4,9 @@ import (
 	"fmt"
 )
 
+// CompareF 排序比较函数. 返回true表示不需要交换位置, false表示需要交换位置.
+type CompareF func(a, b interface{}) bool
+
 // Swap 交换in中下标i和j对应元素的位置
 // func Swap(in interface{}, i, j int) {
 // 	v := reflect.ValueOf(in)
@@ -27,7 +30,7 @@ func Swap(in []interface{}, i, j int) {
 // BubbleSort 冒泡排序
 // 时间复杂度O(n^2), 空间复杂度O(1).
 // compare函数, 返回true表示不需要交换位置, false表示需要交换位置.
-func BubbleSort(arr []interface{}, compare func(a, b interface{}) bool) {
+func BubbleSort(arr []interface{}, compare CompareF) {
 	len := len(arr)
 	for i := 0; i < len; i++ {
 		skip := true
@@ -48,7 +51,7 @@ func BubbleSort(arr []interface{}, compare func(a, b interface{}) bool) {
 // StraightInsertionSort 直接插入排序
 // 时间复杂度O(n^2), 空间复杂度O(1).
 // compare函数, 返回true表示不需要交换位置, false表示需要交换位置.
-func StraightInsertionSort(arr []interface{}, compare func(a, b interface{}) bool) {
+func StraightInsertionSort(arr []interface{}, compare CompareF) {
 	fmt.Println("init:", arr)
 	len := len(arr)
 	//i表示未排序区间的起始位置
