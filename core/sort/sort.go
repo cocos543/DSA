@@ -71,26 +71,3 @@ func StraightInsertionSort(arr []interface{}, compare func(a, b interface{}) boo
 		}
 	}
 }
-
-// StraightInsertionSort 直接插入排序
-// 这里是时间复杂度O(n^3)的实现, 优化之后就是上面的代码了
-// func StraightInsertionSort(arr []interface{}, compare func(a, b interface{}) bool) {
-// 	fmt.Println("init:", arr)
-// 	len := len(arr)
-// 	// i表示未排序区间的起始位置
-// 	for i := 1; i < len; i++ {
-// 		// [j-(j-1)]为已排序区间
-// 		for j := 0; j < i; j++ {
-// 			if arr[j].(int) > arr[i].(int) {
-// 				// arr[j]就是arr[i]需要插入的位置
-// 				//需要腾出位置出来, 让arr[i]插入
-// 				temp := arr[i]
-// 				for k := i; k > j; k-- {
-// 					arr[k] = arr[k-1]
-// 				}
-// 				arr[j] = temp
-// 				fmt.Println(arr)
-// 			}
-// 		}
-// 	}
-// }
