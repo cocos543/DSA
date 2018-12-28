@@ -66,4 +66,4 @@
 ![image](https://github.com/cocos543/DSA/blob/master/resource/img/QuickSort.jpg)
 
     分区函数算法示意图
-![image](https://github.com/cocos543/DSA/blob/master/resource/img/QuickSortParition.jpg)
+![image](https://github.com/cocos543/DSA/blob/master/resource/img/QuickSortPartition.jpg)
