@@ -59,3 +59,11 @@
 ![image](https://github.com/cocos543/DSA/blob/master/resource/img/MergingSort.jpg)
 
 ### 不稳定的排序算法
+
+* [快速排序](https://github.com/cocos543/DSA/blob/master/core/sort/sort_quick.go) ✓
+
+    最好时间复杂度O(nlogn), 最坏时间复杂度O(n^2), 平均时间复杂度O(nlogn), 空间复杂度O(1)
+![image](https://github.com/cocos543/DSA/blob/master/resource/img/QuickSort.jpg)
+
+    分区函数算法示意图
+![image](https://github.com/cocos543/DSA/blob/master/resource/img/QuickSortParition.jpg)

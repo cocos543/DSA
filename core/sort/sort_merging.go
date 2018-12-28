@@ -3,6 +3,7 @@ package sort
 import "fmt"
 
 // MergingSort 归并排序
+// 最好时间复杂度O(nlogn), 最坏时间复杂度O(nlogn), 平均时间复杂度O(nlogn), 空间复杂度O(n)
 // compare函数, 返回true表示不需要交换位置, false表示需要交换位置.
 func MergingSort(arr []interface{}, compare CompareF) {
 	mergingSortGo(arr, 0, len(arr)-1, compare)

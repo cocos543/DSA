@@ -53,3 +53,28 @@ func TestMergingSort(t *testing.T) {
 		return a.(int) <= b.(int)
 	})
 }
+
+func TestQuickSort(t *testing.T) {
+	arr1 := []int{11, 8, 3, 9, 7, 1, 2, 5, 6, 15}
+	s := make([]interface{}, len(arr1))
+	for i, v := range arr1 {
+		s[i] = v
+	}
+	QuickSort(s, func(a, b interface{}) bool {
+		return a.(int) <= b.(int)
+	})
+
+	fmt.Println(s)
+	fmt.Println("------")
+
+	arr1 = []int{6, 11, 3, 9, 8}
+	s = make([]interface{}, len(arr1))
+	for i, v := range arr1 {
+		s[i] = v
+	}
+	QuickSort(s, func(a, b interface{}) bool {
+		return a.(int) <= b.(int)
+	})
+
+	fmt.Println(s)
+}
