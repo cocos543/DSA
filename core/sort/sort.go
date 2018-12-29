@@ -74,3 +74,40 @@ func StraightInsertionSort(arr []interface{}, compare CompareF) {
 		}
 	}
 }
+
+// CountingSort 计数排序(特殊的桶排序) 时间复杂度为O(n), 空间复杂度O(n)
+// 该算法比较特殊, 要求全部元素为0或正整数, 并且范围不宜过大.
+func CountingSort(arr []int) []int {
+	//先找出最大最小值
+	var max int
+	for _, v := range arr {
+		if v > max {
+			max = v
+		}
+	}
+
+	// 创建一个计数数组(切片) c, 数组的下标标识排序元素的值, 数组的值表示对应元素出现的次数. 比如c[5]=10, 表示元素5出现了10次
+	c := make([]int, max+1)
+
+	for _, v := range arr {
+		c[v]++
+	}
+
+	fmt.Println(c)
+	// 再对计数数组的元素顺序累加
+	for i := 1; i <= max; i++ {
+		c[i] += c[i-1]
+	}
+	fmt.Println(c)
+
+	// 根据计数数组, 把待排序的元素,一次放入到目标位置即可完成排序.
+	// 例如c[5]=15,那么说明第一个5, 已排序的数组里, 5这个元素的下标肯定是14(因为加上他自己一共15个元素, 说明有14个比自己小), 第二个5, 在已排序数组里位置是下标为13
+	r := make([]int, len(arr))
+	for _, v := range arr {
+		realIndex := c[v] - 1
+		c[v]--
+		r[realIndex] = v
+	}
+
+	return r
+}

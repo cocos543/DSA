@@ -2,6 +2,7 @@ package sort
 
 import (
 	"fmt"
+	"math/rand"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -47,6 +48,7 @@ func TestStraightInsertionSort(t *testing.T) {
 
 func TestMergingSort(t *testing.T) {
 	arr1 := []int{11, 8, 3, 9, 7, 1, 2, 5, 6}
+
 	s := make([]interface{}, len(arr1))
 	for i, v := range arr1 {
 		s[i] = v
@@ -54,10 +56,12 @@ func TestMergingSort(t *testing.T) {
 	MergingSort(s, func(a, b interface{}) bool {
 		return a.(int) <= b.(int)
 	})
+	fmt.Println(s)
 }
 
 func TestQuickSort(t *testing.T) {
 	arr1 := []int{11, 8, 3, 9, 7, 1, 2, 5, 6, 15}
+
 	s := make([]interface{}, len(arr1))
 	for i, v := range arr1 {
 		s[i] = v
@@ -88,4 +92,16 @@ func TestFindKthLargest(t *testing.T) {
 		s[i] = v
 	}
 	assert.EqualValues(t, 2, FindKthLargest(s, 9), "FindKthLargest is incorrect")
+}
+
+func TestCountingSort(t *testing.T) {
+	var arr []int
+
+	for i := 0; i < 100; i++ {
+		arr = append(arr, rand.Intn(120))
+	}
+
+	fmt.Println(arr)
+	arr = CountingSort(arr)
+	fmt.Println(arr)
 }
