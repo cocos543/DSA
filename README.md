@@ -66,6 +66,7 @@
 ![image](https://github.com/cocos543/DSA/blob/master/resource/img/QuickSort.jpg)
 
 * [快排思想查找第k大元素](https://github.com/cocos543/DSA/blob/master/core/sort/sort_quick.go) ✓
+
     时间复杂度O(n), 空间复杂度O(1)
 
     分区函数算法示意图
