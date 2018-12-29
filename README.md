@@ -43,17 +43,17 @@
 
 ### 稳定的排序算法
 
-* 冒泡排序 ✓
+* [冒泡排序](https://github.com/cocos543/DSA/blob/master/core/sort/sort.go) ✓
 
     最好时间复杂度O(n), 最坏时间复杂度O(n^2), 平均时间复杂度O(n^2), 空间复杂度O(1)
 ![image](https://github.com/cocos543/DSA/blob/master/resource/img/BubbleSort.jpg)
 
-* 直接插入排序 ✓
+* [直接插入排序](https://github.com/cocos543/DSA/blob/master/core/sort/sort.go) ✓
 
     最好时间复杂度O(n), 最坏时间复杂度O(n^2), 平均时间复杂度O(n^2), 空间复杂度O(1)
 ![image](https://github.com/cocos543/DSA/blob/master/resource/img/StraightInsertionSort.jpg)
 
-* 计数排序(特殊桶排序) ✓
+* [计数排序(特殊桶排序)](https://github.com/cocos543/DSA/blob/master/core/sort/sort.go) ✓
 
     时间复杂度O(n), 空间复杂度O(n)
 
