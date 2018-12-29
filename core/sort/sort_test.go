@@ -3,6 +3,8 @@ package sort
 import (
 	"fmt"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestBubbleSort(t *testing.T) {
@@ -77,4 +79,13 @@ func TestQuickSort(t *testing.T) {
 	})
 
 	fmt.Println(s)
+}
+
+func TestFindKthLargest(t *testing.T) {
+	arr1 := []int{11, 8, 3, 9, 7, 1, 2, 5, 6, 15}
+	s := make([]interface{}, len(arr1))
+	for i, v := range arr1 {
+		s[i] = v
+	}
+	assert.EqualValues(t, 2, FindKthLargest(s, 9), "FindKthLargest is incorrect")
 }

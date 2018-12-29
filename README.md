@@ -65,5 +65,8 @@
     最好时间复杂度O(nlogn), 最坏时间复杂度O(n^2), 平均时间复杂度O(nlogn), 空间复杂度O(1)
 ![image](https://github.com/cocos543/DSA/blob/master/resource/img/QuickSort.jpg)
 
+* [快排思想查找第k大元素](https://github.com/cocos543/DSA/blob/master/core/sort/sort_quick.go) ✓
+    时间复杂度O(n), 空间复杂度O(1)
+
     分区函数算法示意图
 ![image](https://github.com/cocos543/DSA/blob/master/resource/img/QuickSortPartition.jpg)
