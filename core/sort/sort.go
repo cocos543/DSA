@@ -27,7 +27,7 @@ func Swap(in []interface{}, i, j int) {
 	in[j] = temp
 }
 
-// BubbleSort 冒泡排序
+// BubbleSort 冒泡排序, 稳定的
 // 时间复杂度O(n^2), 空间复杂度O(1).
 // compare函数, 返回true表示不需要交换位置, false表示需要交换位置.
 func BubbleSort(arr []interface{}, compare CompareF) {
@@ -48,7 +48,7 @@ func BubbleSort(arr []interface{}, compare CompareF) {
 	}
 }
 
-// StraightInsertionSort 直接插入排序
+// StraightInsertionSort 直接插入排序, 稳定的
 // 时间复杂度O(n^2), 空间复杂度O(1).
 // compare函数, 返回true表示不需要交换位置, false表示需要交换位置.
 func StraightInsertionSort(arr []interface{}, compare CompareF) {
@@ -75,7 +75,8 @@ func StraightInsertionSort(arr []interface{}, compare CompareF) {
 	}
 }
 
-// CountingSort 计数排序(特殊的桶排序) 时间复杂度为O(n), 空间复杂度O(n)
+// CountingSort 计数排序(特殊的桶排序), 稳定的
+// 时间复杂度为O(n), 空间复杂度O(n)
 // 该算法比较特殊, 要求全部元素为0或正整数, 并且范围不宜过大.
 func CountingSort(arr []int) []int {
 	//先找出最大最小值

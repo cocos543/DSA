@@ -2,7 +2,7 @@ package sort
 
 import "fmt"
 
-// QuickSort 快速排序
+// QuickSort 快速排序, 不稳定的
 // 最好时间复杂度O(nlogn), 最坏时间复杂度O(n^2), 平均时间复杂度O(nlogn), 空间复杂度O(1)
 // compare函数, 返回true表示不需要交换位置, false表示需要交换位置.
 func QuickSort(arr []interface{}, compare CompareF) {
@@ -36,7 +36,7 @@ func partition(arr []interface{}, p, r int, compare CompareF) int {
 	//将最后一个元素作为分区标志
 	pivot := r
 	//i始终指向从左数起, 第一个大于arr[pivot]的元素下标
-	//游标j从左向右移动, 如果遇到arr[j]小于arr[pivot]的, 则交换arr[j]和arr[pivot]的位置, 同时i++, 这样i会一直标记着从左数起, 第一个大于arr[pivot]的元素下标
+	//游标j从左向右移动, 如果遇到arr[j]小于arr[pivot]的, 则交换arr[j]和arr[i]的位置, 同时i++, 这样i会一直标记着从左数起, 第一个大于arr[pivot]的元素下标
 	i := p
 	for j := p; j < pivot; j++ {
 		//由于这里存在元素交换, 所以快排是不稳定算法(因为你永远的不知道被交换的元素, 后面是不是也要相同的, 这样他们的相对顺序就可能发生变化了)

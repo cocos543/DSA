@@ -75,3 +75,15 @@
 
     分区函数算法示意图
 ![image](https://github.com/cocos543/DSA/blob/master/resource/img/QuickSortPartition.jpg)
+
+## [查找](https://github.com/cocos543/DSA/blob/master/core/search/search)
+
+### 二分查找
+
+* [二分查找](https://github.com/cocos543/DSA/blob/master/core/search/search.go) ✓
+
+   时间复杂度O(logn), 空间复杂度O(1)
+
+* [求解平方根](https://github.com/cocos543/DSA/blob/master/core/search/search.go) ✓
+
+   时间复杂度O(logn), 空间复杂度O(1)
