@@ -88,3 +88,13 @@
 * [求解平方根](https://github.com/cocos543/DSA/blob/master/core/search/search.go) ✓
 
    时间复杂度O(logn), 空间复杂度O(1)
+
+### [四种二分查找的变形算法](https://github.com/cocos543/DSA/blob/master/core/search/search.go)
+
+1. 查找第一个值等于给定值的元素 ✓
+
+2. 查找最后一个值等于给定值的元素 ✓
+
+3. 查找第一个大于等于给定值的元素 ✓
+
+4. 查找最后一个小于等于给定值的元素 ✓
