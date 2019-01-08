@@ -55,3 +55,8 @@ func TestBinarySearch4(t *testing.T) {
 	}
 	assert.EqualValues(t, 3, BinarySearch4(s, 1, func(a, b interface{}) int { return a.(int) - b.(int) }), "BinarySearch4 is incorrect")
 }
+
+func TestLetCodeBinarySearch(t *testing.T) {
+	arr1 := []int{3, 1}
+	assert.EqualValues(t, 1, LetCodeBinarySearch(arr1, 1), "LetCodeBinarySearch is incorrect")
+}

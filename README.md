@@ -82,12 +82,16 @@
 
 * [二分查找](https://github.com/cocos543/DSA/blob/master/core/search/search.go) ✓
 
-   时间复杂度O(logn), 空间复杂度O(1)
+    时间复杂度O(logn), 空间复杂度O(1)
 ![image](https://github.com/cocos543/DSA/blob/master/resource/img/BinarySearch.jpg)
 
 * [求解平方根](https://github.com/cocos543/DSA/blob/master/core/search/search.go) ✓
 
-   时间复杂度O(logn), 空间复杂度O(1)
+    时间复杂度O(logn), 空间复杂度O(1)
+
+* 在循环数组中做二分查找 ✓
+
+    时间复杂度O(logn), 空间复杂度O(1)
 
 ### [四种二分查找的变形算法](https://github.com/cocos543/DSA/blob/master/core/search/search.go)
 
