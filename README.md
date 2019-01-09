@@ -1,5 +1,10 @@
 # DSA
- Data Structure &amp; Algorithm, 算法之美, Go语言实现
+Data Structure &amp; Algorithm, 算法之美, Go语言实现
+
+安装方法
+
+    go get github.com/cocos543/DSA
+    cd $GOPATH/src/github.com/cocos543/DSA/core && go run main.go
 
 # 实现必修的数据结构与算法
 
