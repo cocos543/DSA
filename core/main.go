@@ -1,8 +1,9 @@
 package main
 
 import (
-	. "DSA/core/sort"
 	"fmt"
+
+	. "github.com/cocos543/DSA/core/sort"
 )
 
 func main() {

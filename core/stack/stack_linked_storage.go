@@ -1,8 +1,9 @@
 package stack
 
 import (
-	"DSA/core/linkedlist"
 	"fmt"
+
+	"github.com/cocos543/DSA/core/linkedlist"
 )
 
 // LikedStack 链式栈 使用双向链表实现
