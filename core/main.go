@@ -17,4 +17,5 @@ func main() {
 	QuickSort(s, func(a, b interface{}) bool {
 		return a.(int) <= b.(int)
 	})
+	fmt.Println(s)
 }
