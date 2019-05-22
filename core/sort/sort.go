@@ -22,9 +22,7 @@ type CompareF func(a, b interface{}) bool
 
 // Swap 交换in中下标i和j对应元素的位置
 func Swap(in []interface{}, i, j int) {
-	temp := in[i]
-	in[i] = in[j]
-	in[j] = temp
+	in[i], in[j] = in[j], in[i]
 }
 
 // BubbleSort 冒泡排序, 稳定的
